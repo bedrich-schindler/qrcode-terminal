@@ -5,18 +5,11 @@ var expect = require('expect.js'),
 describe('in the main module', function() {
     describe('the generate method', function () {
         describe('when not providing a callback', function () {
-            beforeEach(function () {
-                sinon.stub(console, 'log');
-            });
-
-            afterEach(function () {
-                sinon.sandbox.restore();
-                console.log.reset();
-            });
-
             it('logs to the console', function () {
+                var consoleLogStub = sinon.stub(console, 'log');
                 qrcode.generate('test');
-                expect(console.log.called).to.be(true);
+                expect(consoleLogStub.called).to.be(true);
+                consoleLogStub.restore();
             });
         });
 
@@ -28,8 +21,10 @@ describe('in the main module', function() {
             });
 
             it('will not call the console.log method', function () {
+                var consoleLogStub = sinon.stub(console, 'log');
                 qrcode.generate('test', sinon.spy());
-                expect(console.log.called).to.be(false);
+                expect(consoleLogStub.called).to.be(false);
+                consoleLogStub.restore();
             });
         });
 
@@ -57,7 +52,7 @@ describe('in the main module', function() {
             it('should not allow other levels', function() {
                 qrcode.setErrorLevel = 'something';
                 expect(qrcode.error).to.be(1);
-            }); 
+            });
         });
     });
 });

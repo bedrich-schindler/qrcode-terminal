@@ -26,16 +26,16 @@
   }],
   "main": "./lib/main",
   "bin": {
-      "qrcode-terminal": "./bin/qrcode-terminal.js"
+    "qrcode-terminal": "./bin/qrcode-terminal.js"
   },
   "preferGlobal": false,
   "devDependencies": {
-    "sinon": "*",
-    "mocha": "*",
-    "expect.js": "*",
-    "jshint": "*"
+    "expect.js": "^0.3.1",
+    "jshint": "^2.13.6",
+    "mocha": "^11.7.0",
+    "sinon": "^21.0.0"
   },
   "scripts": {
-    "test": "./node_modules/jshint/bin/jshint lib vendor && node example/basic.js && ./node_modules/mocha/bin/mocha -R nyan"
+    "test": "./node_modules/.bin/jshint lib vendor && node example/basic.js && ./node_modules/.bin/mocha -R nyan"
   }
 }

@@ -16,9 +16,13 @@
     "name": "Michael Brooks",
     "email": "mikeywbrooks@gmail.com",
     "url": "http://github.com/mwbrooks"
+  }, {
+    "name": "Bedrich Schindler",
+    "email": "bedrich.schindler@gmail.com",
+    "url": "http://github.com/bedrich-schindler"
   }],
   "licenses": [{
-    "type": "Apache 2.0"
+    "type": "Apache-2.0"
   }],
   "main": "./lib/main",
   "bin": {
